@@ -41,4 +41,15 @@
     - name: Print a Fact
       ansible.builtin.debug:
         msg: Hostname = {{ ansible_hostname }}
+
+- name: Defining a variable in runtime using set_facts
+  hosts: localhost
+  tasks:
+    - name: execute uptime shell command
+      ansible.builtin.shell: uptime
+      register: out
+
+    -name: Print out
+     ansible.builtin.debug:
+      msg: "{{ out }}"
       
