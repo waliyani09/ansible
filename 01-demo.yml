@@ -31,16 +31,14 @@
       vars:
         url1: task.example.com
 
-- name: play level but taking vars from an inventory file
+- name: gather facts from ansible
   hosts: localhost
-  connection: local
   vars_files:
     - sample-vars.yml
   #vars:
   #  url: play.example.com
   tasks:
-    - name: Print Hello
+    - name: Print a Fact
       ansible.builtin.debug:
-        msg: URL = {{ url3 }}
-      vars:
-        url1: task.example.com
+        msg: Hostname = {{ ansible_hostname }}
+      
