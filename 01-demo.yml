@@ -33,6 +33,7 @@
 
 - name: play level but taking vars from an inventory file
   hosts: localhost
+  connection: local
   vars_files:
     - sample-vars.yml
   #vars:
