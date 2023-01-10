@@ -1,5 +1,5 @@
 - name: Just a Demo Play
-  hosts: all
+  hosts: localhost
   vars:
     url: play.example.com
   tasks:
@@ -8,7 +8,7 @@
         msg: URL = {{ url }}
 
 - name: Just a Demo Play - on a task level instead
-  hosts: all
+  hosts: localhost
   #vars:
   #  url: play.example.com
   tasks:
